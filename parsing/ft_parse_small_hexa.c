@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_parse_small_hexa.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 15:48:59 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 16:14:37 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/15 16:09:11 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/15 16:11:21 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_parse(va_list args, char c)
+void	ft_parse_small_hexa(int a)
 {
-	if (c == 'd')
-		ft_parse_int(va_arg(args, int));
-	else if (c == 'c')
-		ft_parse_char(va_arg(args, int));
-	else if (c == 's')
-		ft_parse_str(va_arg(args, char *));
-	else if (c == 'x')
-		ft_parse_small_hexa(va_arg(args, int));
-	else if (c == 'X')
-		ft_parse_large_hexa(va_arg(args, int));
-	else
-		return (0);
-	return (1);
+	ft_putnbr_base(a, "0123456789abcdef");
 }

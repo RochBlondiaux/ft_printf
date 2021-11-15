@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:59:49 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 16:05:10 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:15:04 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ int	ft_printf(const char *format, ...)
 	return (0);
 }
 
-/*
 int	main(void)
 {
-	printf("Salut %f %d\n", 3.5, 10 / 3);
-	// ft_printf("Salut %d\n", 10 / 3);
+	printf("X: %X\n", "azaz");
+	ft_printf("X: %X\n", "azaz");
 }
-*/
