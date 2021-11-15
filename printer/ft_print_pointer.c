@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_small_hexa.c                              :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 16:09:11 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 16:11:21 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/15 16:59:34 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/15 17:50:01 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_parse_small_hexa(int a)
+int	ft_print_pointer(unsigned long int a)
 {
-	ft_putnbr_base(a, "0123456789abcdef");
+	ft_putstr("0x10");
+	ft_print_small_hexa(a);
+	return (0);
 }

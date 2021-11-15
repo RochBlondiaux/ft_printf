@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_int.c                                     :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 15:27:32 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 15:36:47 by rblondia         ###   ########.fr       */
+/*   Created: 2021/11/15 16:17:52 by rblondia          #+#    #+#             */
+/*   Updated: 2021/11/15 18:06:16 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_parse_int(int value)
-{
-	ft_putnbr(value);
+int	ft_print_unsigned(unsigned int a)
+{	
+	return (ft_putnbr(a));
 }

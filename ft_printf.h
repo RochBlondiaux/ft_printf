@@ -6,7 +6,7 @@
 /*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:59:47 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 16:14:08 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:05:51 by rblondia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,24 @@
 int		ft_printf(const char *a, ...);
 
 /*
- * Parsing
+ * Printer
  */
-void	ft_parse_int(int value);
-void	ft_parse_char(int c);
-void	ft_parse_str(char *a);
-void	ft_parse_small_hexa(int a);
-void	ft_parse_large_hexa(int a);
-int		ft_parse(va_list args, char c);
+int		ft_print_int(int value);
+int		ft_print_char(int c);
+int		ft_print_str(char *a);
+int		ft_print_small_hexa(int a);
+int		ft_print_large_hexa(int a);
+int		ft_print_unsigned(unsigned int a);
+size_t	ft_print(va_list args, char c);
+int		ft_print_pointer(unsigned long int a);
 
 /*
  * Utils 
  */
-void	ft_putchar(char c);
+int		ft_putchar(char c);
 void	ft_putstr(char *s);
 size_t	ft_strlen(const char *s);
-void	ft_putnbr(int nb);
+int		ft_putnbr(int nb);
 void	ft_putnbr_base(int nbr, char *base);
 
 #endif
