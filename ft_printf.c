@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lfilloux <lfilloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:59:49 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 18:06:42 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:50:48 by lfilloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list			args;
-	int				index;
-	size_t			size;
-	size_t			result;
+	va_list		args;
+	int			index;
+	size_t		size;
+	size_t		result;
 
 	index = 0;
 	va_start(args, format);
@@ -26,27 +26,30 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			result = ft_print(args, format[index + 1]);
-			if (result == 0)
-			{
-				ft_putchar(format[index + 1]);
-				size++;
-			}
+			result = ft_printer(args, format[index + 1]);
+			if (result == 0 && format[index + 1] != 's')
+				size += ft_putchar(format[index + 1]);
 			size += result;
 			index++;
 		}
 		else
-		{
-			ft_putchar(format[index]);
-			size++;
-		}
+			size += ft_putchar(format[index]);
 		index++;
 	}
 	va_end(args);
-	return (0);
+	return (size);
 }
+
+/*
+#include <limits.h>
 
 int	main(void)
 {
-	ft_printf("X: %d\n", 12345);
+	int	i;
+	int	j;
+
+	i = printf("%p %p\n", LONG_MIN, LONG_MAX);
+	j = ft_printf("%p %p", LONG_MIN, LONG_MAX);
+	printf("%d   %d", i - 1, j);
 }
+*/

@@ -3,62 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lfilloux <lfilloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 17:50:40 by lfilloux          #+#    #+#             */
-/*   Updated: 2021/11/15 17:56:58 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:29:37 by lfilloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_right_base(char	*base)
+int	ft_putnbr_base(unsigned int nb, char *base)
 {
-	int	i;
-	int	j;
+	int		size;
 
-	i = 0;
-	if (ft_strlen(base) <= 1)
-		return (0);
-	while (base[i])
+	size = 0;
+	if (nb >= 0 && nb < 16)
+		size += ft_putchar(base[nb]);
+	if (nb >= 16)
 	{
-		j = i + 1;
-		while (base[j])
-		{
-			if (base[i] == base[j])
-				return (0);
-			j++;
-		}
-		if (base[i] == '+' || base[i] == '-')
-			return (0);
-		i++;
+		size += ft_putnbr_base(nb / 16, base);
+		size += ft_putchar(base[nb % 16]);
 	}
-	return (1);
-}
-
-void	ft_putnbr_base(int nbr, char *base)
-{
-	long int	i;
-	int			len;
-	long		nb;
-
-	len = ft_strlen(base);
-	i = 0;
-	nb = (long)nbr;
-	if (ft_right_base(base) == 0)
-		return ;
-	if (nb < 0)
-	{
-		write (1, "-", 1);
-		nb *= -1;
-	}
-	if (nb >= 0 && nb < len)
-	{
-		ft_putchar(base[nb]);
-	}
-	if (nb >= len)
-	{
-		ft_putnbr_base(nb / len, base);
-		ft_putchar(base[nb % len]);
-	}
+	return (size);
 }

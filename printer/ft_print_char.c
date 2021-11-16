@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rblondia <rblondia@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lfilloux <lfilloux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:41:40 by rblondia          #+#    #+#             */
-/*   Updated: 2021/11/15 17:41:24 by rblondia         ###   ########.fr       */
+/*   Updated: 2021/11/16 09:51:15 by lfilloux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_print_char(int c)
 {
-	ft_putchar((unsigned char) c);
-	return (1);
+	return (ft_putchar((unsigned char) c));
 }
